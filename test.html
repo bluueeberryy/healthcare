@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Appointment Booking Form</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+
+  .container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .step {
+    display: none;
+  }
+
+  .step.active {
+    display: block;
+  }
+
+  .btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .btn.next {
+    float: right;
+  }
+
+  .btn.prev {
+    float: left;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <form id="appointmentForm" action="#" method="post">
+    <div class="step active" id="step1">
+      <h2>Step 1: Personal Information</h2>
+      <input type="text" name="name" placeholder="Your Name" required><br><br>
+      <input type="email" name="email" placeholder="Your Email" required><br><br>
+      <input type="tel" name="phone" placeholder="Your Phone Number" required><br><br>
+      <button class="btn next" onclick="nextStep()">Next</button>
+    </div>
+    <div class="step" id="step2">
+      <h2>Step 2: Select Date and Time</h2>
+      <input type="date" name="date" required><br><br>
+      <input type="time" name="time" required><br><br>
+      <button class="btn prev" onclick="prevStep()">Previous</button>
+      <button class="btn next" onclick="nextStep()">Next</button>
+    </div>
+    <div class="step" id="step3">
+      <h2>Step 3: Confirmation</h2>
+      <p>Please review your appointment details:</p>
+      <div id="confirmationDetails"></div>
+      <button class="btn prev" onclick="prevStep()">Previous</button>
+      <input type="submit" class="btn" value="Confirm Appointment">
+    </div>
+  </form>
+</div>
+
+<script>
+  var currentStep = 1;
+  var appointmentForm = document.getElementById('appointmentForm');
+
+  function nextStep() {
+    currentStep++;
+    showStep(currentStep);
+  }
+
+  function prevStep() {
+    currentStep--;
+    showStep(currentStep);
+  }
+
+  function showStep(step) {
+    var steps = document.querySelectorAll('.step');
+    steps.forEach(function(stepEl) {
+      stepEl.classList.remove('active');
+    });
+    steps[step - 1].classList.add('active');
+
+    if (step === 3) {
+      displayConfirmation();
+    }
+  }
+
+  function displayConfirmation() {
+    var formValues = new FormData(appointmentForm);
+    var confirmationDetails = document.getElementById('confirmationDetails');
+    confirmationDetails.innerHTML = '';
+
+    for (var pair of formValues.entries()) {
+      confirmationDetails.innerHTML += '<strong>' + pair[0] + ':</strong> ' + pair[1] + '<br>';
+    }
+  }
+</script>
+</body>
+</html>

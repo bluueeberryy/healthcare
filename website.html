@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        nav {
+            background-color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        
+        main {
+            padding: 20px;
+        }
+        
+        h2 {
+            color: #007bff;
+        }
+        
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        
+        .appointment-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Healthcare Portal</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#book-appointment">Book Appointment</a></li>
+            <li><a href="#medical-records">Medical Records</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="book-appointment" class="container">
+            <h2>Book Appointment</h2>
+            <div class="appointment-form">
+                <form>
+                    <div>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div>
+                        <label for="date">Preferred Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div>
+                        <label for="time">Preferred Time</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+                    <div>
+                        <input type="submit" value="Book Appointment">
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section id="medical-records" class="container">
+            <h2>Medical Records</h2>
+            <p>Access your medical records securely.</p>
+        </section>
+        <section id="contact" class="container">
+            <h2>Contact</h2>
+            <p>Get in touch with us for any inquiries.</p>
+        </section>
+    </main>
+</body>
+</html>

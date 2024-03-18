@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>MedConnect</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Ojuju:wght@200..800&family=PT+Sans+Narrow&family=Rubik:wght@300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="index.js"></script>
+
+</head>
+
+<body style="background-color: #B6D9FF;">
+  <div class="header-div">
+    <h1>MedConnect Healthcare Portal</h1>
+  </div>
+
+  <nav>
+    <ul class="nav-div">
+      <li class="nav-list"><a href="#" id="bookAppointment">Book Appointment</a></li>
+
+      <li class="nav-list"><a href="#medical-records">Medical Records </a></li>
+      <li class="nav-list"><a href="contact.html"> Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="img">
+    <img style="display: inline;" src="Hospital-and-Patient-Healthcare-Portal-896x1024.webp" height="400em">
+
+    <img style="display: inline;" src="Design_11.png" height="400em">
+  </div>
+
+  <section>
+    <div class="container ">
+      <center>
+        <h2 class="h3 py-4">We are available at</h2>
+
+        <a href="" target="_blank" class="market-btn apple-btn" role="button">
+          <span class="market-button-subtitle">Download on the</span>
+          <span class="market-button-title">App Store</span>
+        </a>
+
+
+        <a href="" target="_blank" class="market-btn google-btn" role="button">
+          <span class="market-button-subtitle">Download on the</span>
+          <span class="market-button-title">Google Play</span>
+        </a>
+
+        <a href="" target="_blank" class="market-btn windows-btn" role="button">
+          <span class="market-button-subtitle">Download on the</span>
+          <span class="market-button-title">Windows Store</span>
+        </a>
+
+
+      </center>
+    </div>
+
+
+  </section>
+  <div class="outer-div reveal">
+    <div class="inner-div">
+      <h2>The Future Of Healthcare </h2>
+      <h3>Unlocking the Potential of Patient Portal Software</h3>
+    </div>
+    <img src="final-blogs-images1.png" height="250em">
+  </div>
+  <div class="outer-review reveal"
+    style=" background-color: #007bff; text-align: center; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: #ffffff;">
+    <h3>Reviews From Our Users</h3>
+  </div>
+  <div style="background-color: #007bff" class="review-div reveal">
+
+    <div class="review-card">
+      <div>
+        <h3 style="font-size: 1.5em ; margin-bottom: 1em;">"Life-saver!"</h3>
+      </div>
+      <div>
+        <p style="text-align: center;"> The interface is user-friendly, appointments are easy to book, and the range of
+          services covered is
+          extensive. Highly recommended!</p>
+      </div>
+
+      <h3 style="font-size: 1em; margin-top: 1em;"><i>Dr. Emily Wellness, MD</i></h3>
+    </div>
+    <div class="review-card">
+      <h3 style="font-size: 1.5em ; margin-bottom: 1em;">"Efficient and Informative"</h3>
+      <p style="text-align: center;"> I've never been one to navigate healthcare portals with ease, but this one was a
+        breeze. Kudos to the team
+        behind this portal.</p>
+      <h3 style="font-size: 1em; margin-top: 1em;"><i>Michael Wellman, PA-C
+        </i></h3>
+
+
+    </div>
+    <div class="review-card">
+      <h3 style="font-size: 1.2em ; margin-bottom: 1em;">"Convenient and Accessible"</h3>
+      <p style="text-align: center;">This portal has made managing my healthcare needs so much simpler. Whether it's
+        scheduling appointments,
+        requesting prescription refills, or accessing my medical records, it's all right there at my fingertips.
+      </p>
+      <h3 style="font-size: 1em;"><i>John Healthington, RN</i></h3>
+    </div>
+    <div class="review-card">
+      <h3 style="font-size: 1.3em ; margin-bottom: 1em;">"Exceptional Service"</h3>
+      <p style="text-align: center;">The response time from healthcare professionals is impressive, and the personalized
+        care I've received
+        has exceeded my expectations. It's rare to find such dedication in today's digital age. I'm incredibly grateful
+        for this portal.</p>
+      <h3 style="font-size: 1em; margin-top: 1em;"><i>Dr. Sarah Carewell, DO</i></h3>
+
+    </div>
+
+  </div>
+  <div id="bookingPopup" style="display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 40px; 
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 400px; 
+      max-width: 90%; 
+      max-height: 80%; 
+      overflow-y: auto; background-color: #007bff;">
+    <div class="popup-div">
+      <span class="closeButton" id="closeButton">&times;</span> <!-- Close button -->
+
+      <h2 style="color: white;">Choose Booking Type</h2>
+      <a href="appointment.html"><img style="display: inline; margin-top: 1em; margin-bottom: 2em;"
+          src="book doc appointment.png" width="200em"></a>
+      <a href="appointment.html"><img style="display: inline;" src="online.png" width="200em"></a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("closeButton").addEventListener("click", function () {
+      document.getElementById("bookingPopup").style.display = "none"; // Hide the popup
+    });
+    // Function to display the popup when "Book Appointment" link is clicked
+    document.getElementById("bookAppointment").addEventListener("click", function (event) {
+      event.preventDefault(); // Prevent the default link behavior
+      document.getElementById("bookingPopup").style.display = "block"; // Display the popup
+    });
+
+    // Function to handle offline booking button click
+    document.getElementById("offlineBooking").addEventListener("click", function () {
+      alert("You chose Offline Booking");
+      document.getElementById("bookingPopup").style.display = "none"; // Hide the popup
+    });
+
+    // Function to handle online booking button click
+    document.getElementById("onlineBooking").addEventListener("click", function () {
+      alert("You chose Online Booking");
+      document.getElementById("bookingPopup").style.display = "none"; // Hide the popup
+    });
+  </script>
+</body>
+
+</html>
